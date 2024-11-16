@@ -1,0 +1,29 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Testando Bootstrap 4.5</h1>
+        <div class="container">
+            <% respostas.forEach(i => { %>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3><%= i.titulo %></h3>
+                    </div>
+                    
+                    <div class="card-footer text-right">
+                        <a href="/pergunta/<%= i.id %>">
+                            <button class="btn btn-primary float-left">Responder</button>
+                        </a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="/perguntar" class="btn btn-secondary float-right mb-5">Voltar</a>
+        </div>
+    </div>
+</body>
+
+<%- include ('partials/footer.ejs') %>
